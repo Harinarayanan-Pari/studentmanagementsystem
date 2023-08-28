@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE STUDENT DETAILS</title>
+</head>
+<body>
+    <div>
+        <h1>UPDATE STUDENT DETAILS</h1>
+        <form method = "POST">
+            <p>Name: <input type="text" name="name" value="{{student.name}}"></p>
+            <p>Age: <input type="text" name="age" value="{{student.age}}"></p>
+            <p>Address: <input type="text" name="address" value="{{student.address}}"></p>
+            <p>Class: <input type="text" name="standard" value="{{student.standard}}"></p>
+            <p>Gender: <input type="text" name="gender" value="{{student.gender}}"></p>
+            {% csrf_token %}
+            <a href="/update/{{item.id}}"><input type="submit" value="UPDATE" id="updateinput"></a>
+        </form>
+    </div>
+    
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            padding-left: 90px;
+            color: cornflowerblue;
+        }
+        div{
+            outline: 5px solid white;
+            outline-offset: 5px;
+            width:600px;
+            background-color: aqua;
+            padding: 10px;
+            margin: 200px 450px;
+        }
+        form{
+            padding-left: 200px;
+            font-weight: 600;
+        }
+        #updateinput{
+            padding: 10px 70px;
+            background-color: rgb(178, 8, 110);
+            font-size: large;
+            font-weight: 700;
+            border-radius: 5px;
+        }
+    </style>
+    
+    
+</body>
+</html>

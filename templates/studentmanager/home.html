@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Manager</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1>STUDENT MANAGEMENT SYSTEM</h1>
+      <!-- <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <a href=""><input type="submit" value="add std"></a>
+    </form> -->
+      <table>
+        <thead>
+          <th>NAME</th>
+          <th>AGE</th>
+          <th>CLASS</th>
+          <th>GENDER</th>
+          <th>ADDRESS</th>
+        </thead>
+        {% for item in data_list %}
+        <tr>
+          <td>{{item.name }}</td>
+          <td>{{item.age }}</td>
+          <td>{{item.standard }}</td>
+          <td>{{item.gender }}</td>
+          <td id="addresstd">{{item.address }}</td>
+          <td><a href="/delete/{{item.id}}" id="delete">delete</a></td>
+          <td><a href="/update/{{item.id}}" id="update">update</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="/add"
+        ><input type="submit" value="ADD STUDENT" id="addbutton"
+      /></a>
+    </div>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+      #main {
+        /* outline: 2px solid black; */
+        padding: 5px 300px;
+        max-width: 100%;
+        padding-right: 40px;
+        padding-bottom: 50px;
+        /* background-color: black; */
+
+      }
+      h1 {
+        color: white;
+        margin-left: 150px;
+        max-width: 600px;
+
+      }
+      table {
+        outline: 5px solid black;
+        max-width: 300px;
+        padding: 50px 140px;
+        background-color: aqua;
+        font-weight: 700;
+        border-radius: 10px;
+
+      }
+      #addbutton {
+        margin-top: 20px;
+        padding: 10px 50px;
+        margin-left: 320px;
+        background-color: aquamarine;
+        font-weight: 900;
+        border-radius: 5px;
+      }
+      th {
+        padding-left: 10px;
+        color: brown;
+      }
+      td {
+        padding: 5px 10px;
+        color: rgb(24, 16, 1);
+      }
+      #addresstd {
+        max-width: 50px;
+      }
+      #delete {
+        text-decoration: none;
+        color: black;
+        outline: 2px solid red;
+        background-color: red;
+        padding: 0 20px;
+      }
+      #update {
+        text-decoration: none;
+        color: black;
+        outline: 2px solid rgb(20, 154, 232);
+        background-color: rgb(20, 154, 232);
+        padding: 0 20px;
+      }
+    </style>
+  </body>
+</html>

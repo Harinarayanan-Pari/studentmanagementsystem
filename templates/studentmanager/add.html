@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add student</title>
+</head>
+<body>
+    <form method="POST">
+        <h1>ENTER STUDENT DETAILS</h1>
+        {{form.as_p}}
+        {% csrf_token %}
+        <a href="/add"><input id="button" type="submit" value="ADD STUDENT"></a>
+    </form>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1 {
+            color:red;
+            margin-left: 90px;
+        }
+        form{
+            outline: 5px solid rgb(255, 255, 255);
+            outline-offset: 5px;
+            width:600px;
+            background-color: aqua;
+            padding: 10px;
+            margin: 200px 450px;
+        }
+        p{
+            min-width: 200px;
+            margin-left: 180px;
+            font-weight: 600;
+        }
+        #button{
+            margin-left: 190px;
+            padding: 10px 50px;
+            background-color: cornflowerblue;
+            font-weight: 700;
+            font-size: large;
+            border-radius: 5px;
+        }    
+        </style>
+    
+</body>
+</html>
